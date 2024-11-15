@@ -1,0 +1,23 @@
+# Xcode
+# Build, test, and archive an Xcode workspace on macOS.
+# Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
+name: $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+- main
+
+pool:
+   vmImage: 'macOS-15'
+
+steps:
+- task: Xcode@5
+  displayName: Build 'iRouter'
+  inputs:
+    actions: 'build'
+    scheme: 'iRouter'
+    sdk: #'iphoneos'
+    configuration: 'Release'
+    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+    xcodeVersion: 16 # Options: 11, 12, 13, 14, 15, default, specifyPath
+    #xcodeDeveloperDir: '/Applications/Xcode_15.2.app'
+    
