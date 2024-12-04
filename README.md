@@ -1,3 +1,7 @@
+Simple pipeline for determining which version of Xcode is available
+
+
+```
 2024-11-15T16:12:05.6560090Z ##[section]Starting: Select Xcode Version
 2024-11-15T16:12:05.6568780Z ==============================================================================
 2024-11-15T16:12:05.6569020Z Task         : PowerShell
@@ -37,3 +41,4 @@
 2024-11-15T16:12:13.6173480Z Build version 16A242d
 2024-11-15T16:12:13.8524690Z 
 2024-11-15T16:12:13.8653570Z ##[section]Finishing: Select Xcode Version
+```
